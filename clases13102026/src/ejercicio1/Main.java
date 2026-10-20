@@ -4,15 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //1 ¿Como crear un objeto?
-        //Nombre de la clase + nombre del objeto = new + nombre del constructor+();
-        //nombre del constructor = nombre de la clase
-        Cuenta c1 = new Cuenta("Pepe",1.45,"ES3483478374847",1000);
-        Cuenta c2 = new Cuenta();
-        System.out.println(c2.getSaldo());
 
-
-        /*Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String nombre, numero;
         double tipo, importe;
 
@@ -29,14 +22,14 @@ public class Main {
         System.out.print("Saldo: ");
         importe = sc.nextDouble();
 
-        cuenta1.setNombre(nombre);
+        cuenta1.setCliente(nombre);
         cuenta1.setNumeroCuenta(numero);
-        cuenta1.setTipoInteres(tipo);
+        cuenta1.setInteres(tipo);
         cuenta1.setSaldo(importe);
 
         //se crea el objeto cuenta2 con los valores leidos por teclado
         //se ejecuta el constructor con parámetros
-        Cuenta cuenta2 = new Cuenta("Juan Ferrández Rubio", "12345678901234567890", 1.75, 300);
+        Cuenta cuenta2 = new Cuenta("Juan Ferrández Rubio", 1.75, "12345678901234567890", 300);
 
         //se crea cuenta3 como copia de cuenta1
         //se ejecuta el constructor copia
@@ -44,9 +37,9 @@ public class Main {
 
         //mostrar los datos de cuenta1
         System.out.println("Datos de la cuenta 1");
-        System.out.println("Nombre del titular: " + cuenta1.getNombre());
+        System.out.println("Nombre del titular: " + cuenta1.getCliente());
         System.out.println("Número de cuenta: " + cuenta1.getNumeroCuenta());
-        System.out.println("Tipo de interés: " + cuenta1.getTipoInteres());
+        System.out.println("Tipo de interés: " + cuenta1.getInteres());
         System.out.println("Saldo: " + cuenta1.getSaldo());
         System.out.println();
 
@@ -58,22 +51,22 @@ public class Main {
 
         //mostrar los datos de cuenta2
         System.out.println("Datos de la cuenta 2");
-        System.out.println("Nombre del titular: " + cuenta2.getNombre());
+        System.out.println("Nombre del titular: " + cuenta2.getCliente());
         System.out.println("Número de cuenta: " + cuenta2.getNumeroCuenta());
-        System.out.println("Tipo de interés: " + cuenta2.getTipoInteres());
+        System.out.println("Tipo de interés: " + cuenta2.getInteres());
         System.out.println("Saldo: " + cuenta2.getSaldo());
         System.out.println();
 
         //mostrar los datos de cuenta3
         System.out.println("Datos de la cuenta 3");
-        System.out.println("Nombre del titular: " + cuenta3.getNombre());
+        System.out.println("Nombre del titular: " + cuenta3.getCliente());
         System.out.println("Número de cuenta: " + cuenta3.getNumeroCuenta());
-        System.out.println("Tipo de interés: " + cuenta3.getTipoInteres());
+        System.out.println("Tipo de interés: " + cuenta3.getInteres());
         System.out.println("Saldo: " + cuenta3.getSaldo());
         System.out.println();
 
         //realizar una transferencia de 10€ desde cuenta3 a cuenta2
-        if(cuenta3.transferencia(cuenta2, 10)){
+        if (cuenta3.transferencia(cuenta2, 10)) {
             System.out.println("Transferencia realizada");
         } else {
             System.out.println("No se ha podido realizar la transferencia");
@@ -87,6 +80,6 @@ public class Main {
         //mostrar el saldo de cuenta3
         System.out.println("Saldo de la cuenta 3");
         System.out.println("Saldo: " + cuenta3.getSaldo());
-        System.out.println();*/
+        System.out.println();
     }
 }

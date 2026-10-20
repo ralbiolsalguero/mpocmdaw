@@ -15,7 +15,7 @@ public class Cuenta {
     /*CONSTRUCTORES -> POR DEFECTO, POR PARAMETROS, COPIA*/
     //public + nombre de la clase (parametros)
 
-    public Cuenta(String cliente, double interes, String numeroCuenta, double saldo){
+    public Cuenta(String cliente, double interes, String numeroCuenta, int saldo) {
         this.cliente = cliente;
         this.interes = interes;
         this.numeroCuenta = numeroCuenta;
@@ -23,7 +23,14 @@ public class Cuenta {
     }
 
     public Cuenta(){
-        this.saldo = 746;
+
+    }
+
+    public Cuenta(Cuenta c){
+        this.cliente = c.cliente;
+        this.interes = c.interes;
+        this.numeroCuenta = c.numeroCuenta;
+        this.saldo = c.saldo;
     }
 
 
@@ -67,6 +74,42 @@ public class Cuenta {
     public void setSaldo(double saldo){
         this.saldo = saldo;
     }
+
+    public boolean ingreso(double cantidad){
+        boolean resultado = true;
+
+        if(cantidad < 0){
+            resultado = false;
+        }else{
+            this.saldo += cantidad; //this.saldo = this.saldo + cantidad
+        }
+
+        return resultado;
+
+    }
+
+    public boolean reintegro(double cantidad){
+        boolean resultado = true;
+        if(cantidad < 0 || cantidad > this.saldo){
+            resultado = false;
+        }else{
+            this.saldo -= cantidad;
+        }
+        return resultado;
+    }
+
+    public boolean transferencia(Cuenta cuentaDestino, double dinero){
+        boolean resultado = true;
+        if(dinero < 0 || dinero > this.saldo){
+            resultado = false;
+        }else{
+            reintegro(dinero);
+            cuentaDestino.ingreso(dinero);
+        }
+
+        return resultado;
+    }
+
 
 }
 
